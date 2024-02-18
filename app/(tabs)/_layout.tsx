@@ -1,73 +1,62 @@
-import {View, Text} from 'react-native'
-import React from 'react'
-import { Tabs } from 'expo-router'
-import Colors from '@/constants/Colors'
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
-import { FontAwesome5 } from '@expo/vector-icons'
-
+import React from 'react';
+import { Tabs } from 'expo-router';
+import { Ionicons, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
+import Colors from '@/constants/Colors';
 
 const Layout = () => {
-    return (
-        <Tabs screenOptions={{
-            tabBarActiveTintColor: Colors.primary,
-            tabBarLabelStyle:{
-                fontFamily: 'monbl',
-            },
-            }}>
-        <Tabs.Screen
-            name="explore"
-            options={{
-                tabBarLabel: 'Explore',
-                tabBarIcon: ({color, size}) =>
-                <FontAwesome5 name = "train" color={color} size ={size}/>
-            }}>
-
-        </Tabs.Screen>
-        <Tabs.Screen
-            name="map"
-            options={{
-                tabBarLabel: 'Map',
-                tabBarIcon: ({color, size}) =>
-                <Ionicons name = "search" color={color} size ={size}/>
-            }}>
-
-        </Tabs.Screen>
-
-
-        <Tabs.Screen
-            name="Inbox"
-            options={{
-                tabBarLabel: 'Inbox',
-                tabBarIcon: ({color, size}) =>
-                <Ionicons name = "mail" color={color} size ={size}/>
-            }}>
-
-        </Tabs.Screen>
-
-
-
-        <Tabs.Screen
-            name="WishList"
-            options={{
-                tabBarLabel: 'WishList',
-                tabBarIcon: ({color, size}) =>
-                <FontAwesome5 name = "heart" color={color} size ={size}/>
-            }}>
-
-        </Tabs.Screen>
-        <Tabs.Screen
-            name="Profile"
-            options={{
-                tabBarLabel: 'Profile',
-                tabBarIcon: ({color, size}) =>
-                <Ionicons name = "man" color={color} size ={size}/>
-            }}>
-
-        </Tabs.Screen>
-
-        
-        </Tabs>
-    );
+  return (
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: 'grey',
+        tabBarLabelStyle: {
+          fontFamily: 'mon-sb',
+        },
+      }}
+    >
+      <Tabs.Screen
+        name="index"
+        options={{
+          tabBarLabel: 'Explore',
+          tabBarIcon: ({ size, color }) => <Ionicons name="search" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="whishlists"
+        options={{
+          tabBarLabel: 'Wishlists',
+          tabBarIcon: ({ size, color }) => (
+            <Ionicons name="heart-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="trips"
+        options={{
+          tabBarLabel: 'Trips',
+          tabBarIcon: ({ size, color }) => <FontAwesome5 name="airbnb" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="inbox"
+        options={{
+          tabBarLabel: 'Inbox',
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons name="message-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          tabBarLabel: 'Profile',
+          headerShown: false,
+          tabBarIcon: ({ size, color }) => (
+            <Ionicons name="person-circle-outline" size={size} color={color} />
+          ),
+        }}
+      />
+    </Tabs>
+  );
 };
 
 export default Layout;

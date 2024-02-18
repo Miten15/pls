@@ -1,0 +1,64 @@
+
+[
+    {
+        "id": "13",
+        "name": "Tech Startups Expo",
+        "description": "Showcasing innovative technology startups and their products.",
+        "host": "Startup Association of India",
+        "date": "2024-04-10",
+        "venue": "Bengaluru Tech Park",
+        "price": "1200rs",
+        "categories": ["Technology", "Startups"],
+        "thumbnail_url": "https://example.com/images/thumb-techstartups.jpg",
+        "medium_url": "https://example.com/images/med-techstartups.jpg"
+    },
+    {
+        "id": "14",
+        "name": "Music Fest",
+        "description": "A festival celebrating various genres of music with live performances.",
+        "host": "Music Association of India",
+        "date": "2024-04-15",
+        "venue": "Jawaharlal Nehru Stadium, Delhi",
+        "price": "1500rs",
+        "categories": ["Music", "Entertainment"],
+        "thumbnail_url": "https://example.com/images/thumb-music.jpg",
+        "medium_url": "https://example.com/images/med-music.jpg"
+    },
+    {
+        "id": "15",
+        "name": "Green Energy Summit",
+        "description": "Discussion on renewable energy sources and sustainable practices.",
+        "host": "Renewable Energy Forum",
+        "date": "2024-04-20",
+        "venue": "Mumbai Convention Centre",
+        "price": "1800rs",
+        "categories": ["Environment", "Sustainability"],
+        "thumbnail_url": "https://example.com/images/thumb-greenenergy.jpg",
+        "medium_url": "https://example.com/images/med-greenenergy.jpg"
+    },
+    {
+        "id": "16",
+        "name": "Travel Expo",
+        "description": "Showcasing travel destinations, tour packages, and travel services.",
+        "host": "Travel Industry Association",
+        "date": "2024-04-25",
+        "venue": "Chennai Trade Centre",
+        "price": "Free Entry",
+        "categories": ["Travel", "Tourism"],
+        "thumbnail_url": "https://example.com/images/thumb-travel.jpg",
+        "medium_url": "https://example.com/images/med-travel.jpg"
+    },
+    {
+        "id": "17",
+        "name": "E-commerce Summit",
+        "description": "Discussion on the latest trends and innovations in e-commerce.",
+        "host": "E-commerce Association",
+        "date": "2024-05-01",
+        "venue": "Hyderabad International Convention Center",
+        "price": "2000rs",
+        "categories": ["Business", "E-commerce"],
+        "thumbnail_url": "https://example.com/images/thumb-ecommerce.jpg",
+        "medium_url": "https://example.com/images/med-ecommerce.jpg"
+    }
+]
+ 
