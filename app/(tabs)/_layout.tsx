@@ -1,48 +1,33 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
-import { Ionicons, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 
 const Layout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: 'grey',
+        tabBarActiveTintColor: '#000',
+        tabBarInactiveTintColor:'grey',
         tabBarLabelStyle: {
+          
           fontFamily: 'mon-sb',
         },
       }}
     >
+      
       <Tabs.Screen
-        name="index"
+        name="map"
         options={{
-          tabBarLabel: 'Explore',
-          tabBarIcon: ({ size, color }) => <Ionicons name="search" size={size} color={color} />,
+          tabBarLabel: 'Map',
+          tabBarIcon: ({ size, color }) => <MaterialIcons name='map' size={size} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="whishlists"
+        name="add"
         options={{
-          tabBarLabel: 'Wishlists',
-          tabBarIcon: ({ size, color }) => (
-            <Ionicons name="heart-outline" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="trips"
-        options={{
-          tabBarLabel: 'Trips',
-          tabBarIcon: ({ size, color }) => <FontAwesome5 name="airbnb" size={size} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="inbox"
-        options={{
-          tabBarLabel: 'Inbox',
-          tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons name="message-outline" size={size} color={color} />
-          ),
+          tabBarLabel: 'Add Event',
+          tabBarIcon: ({ size, color }) => <MaterialIcons name='event' size={size} color={color} />,
         }}
       />
       <Tabs.Screen
@@ -51,7 +36,7 @@ const Layout = () => {
           tabBarLabel: 'Profile',
           headerShown: false,
           tabBarIcon: ({ size, color }) => (
-            <Ionicons name="person-circle-outline" size={size} color={color} />
+            <MaterialIcons name="person" size={size} color={color} />
           ),
         }}
       />

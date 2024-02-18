@@ -5,7 +5,7 @@ import { DocumentData, collection, getDocs, getFirestore, addDoc } from 'firebas
 import { FirebaseApp } from 'firebase/app';
 import { Formik } from 'formik';
 import * as ImagePicker from 'expo-image-picker';
-import { getStorage, ref, uploadBytes, UploadResult } from "firebase/storage";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 const getFirestoreInstance = (app: FirebaseApp) => {
   return getFirestore(app);
@@ -45,7 +45,7 @@ const Add = () => {
     }
   };
 
-  const onsubmitMethod = async (values: {
+  const onSubmitMethod = async (values: {
     evntname?: string;
     desc?: string;
     category?: string;
@@ -58,19 +58,19 @@ const Add = () => {
     date?: string;
   }) => {
     try {
-      let imageUrl = '';
-
       if (typeof values.image !== 'string') {
+        // Convert URI to Blob
         const resp = await fetch(values.image);
         const blob = await resp.blob();
-        const storageRef = ref(storage, 'Events/' + Date.now() + ".jpg");
-        const snapshot = await uploadBytes(storageRef, blob) as UploadResult;
-       // imageUrl = await snapshot.ref.getDownloadURL(); // Use getDownloadURL method
-      } else {
-        imageUrl = values.image;
+
+        // Upload blob to Firebase Storage
+        const storageRef = ref(storage, 'communityPost/' + Date.now() + ".jpg");
+        await uploadBytes(storageRef, blob);
+
+        console.log('Uploaded a blob or file!');
       }
 
-      await addDoc(collection(db, 'Events'), { ...values, image: imageUrl });
+      await addDoc(collection(db, 'Events'), { ...values, image });
 
       console.log("Event added successfully!");
       ToastAndroid.show('Event added successfully!', ToastAndroid.SHORT);
@@ -89,64 +89,64 @@ const Add = () => {
         <Text style={{ fontSize: 20, fontFamily: 'bold' }}>ADD A NEW EVENT</Text>
         <Formik
           initialValues={{ evntname: '', desc: '', category: '', venue: '', price: '', image: '', phoneno: '', Email_id: '', Host: '', date: '' }}
-          onSubmit={values => onsubmitMethod(values)}
+          onSubmit={values => onSubmitMethod(values)}
         >
           {({ handleChange, handleSubmit, values }) => (
             <View>
               <TextInput
                 style={styles.input}
-                placeholder='Event Name'
+                placeholder='Enter Event Name'
                 value={values?.evntname}
                 onChangeText={handleChange('evntname')}
               />
               <TextInput
                 style={styles.input}
-                placeholder='Description'
+                placeholder='Enter Description'
                 value={values?.desc}
                 numberOfLines={5}
                 onChangeText={handleChange('desc')}
               />
               <TextInput
                 style={styles.input}
-                placeholder='Price'
+                placeholder='Enter Price'
                 value={values?.price}
                 keyboardType='number-pad'
                 onChangeText={handleChange('price')}
               />
               <TextInput
                 style={styles.input}
-                placeholder='Category'
+                placeholder='Enter Category'
                 value={values?.category}
                 onChangeText={handleChange('category')}
               />
               <TextInput
                 style={styles.input}
-                placeholder='Venue'
+                placeholder='Enter Venue'
                 value={values?.venue}
                 onChangeText={handleChange('venue')}
               />
               <TextInput
                 style={styles.input}
-                placeholder='Phone Number'
+                placeholder='Enter Phone Number'
                 value={values?.phoneno}
                 keyboardType='number-pad'
                 onChangeText={handleChange('phoneno')}
               />
               <TextInput
                 style={styles.input}
-                placeholder='Email Address'
+                placeholder='Enter Email Address'
                 value={values?.Email_id}
                 onChangeText={handleChange('Email_id')}
               />
               <TextInput
                 style={styles.input}
-                placeholder='Date'
+                placeholder='Enter Date'
                 value={values?.date}
                 onChangeText={handleChange('date')}
               />
               <TextInput
                 style={styles.input}
-                placeholder='Host'
+                placeholder='Enter Host'
                 value={values?.Host}
                 onChangeText={handleChange('Host')}
               />

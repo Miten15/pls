@@ -9,8 +9,8 @@
         "venue": "Bengaluru Tech Park",
         "price": "1200rs",
         "categories": ["Technology", "Startups"],
-        "thumbnail_url": "https://example.com/images/thumb-techstartups.jpg",
-        "medium_url": "https://example.com/images/med-techstartups.jpg"
+        "thumbnail_url": "https://img.freepik.com/free-photo/start-up-business-goals-strategy_53876-124798.jpg?w=900&t=st=1708239623~exp=1708240223~hmac=6a2248b80ab199506636d643e79321e5d91b5d2d9f254979be40627e815e77e0",
+        "medium_url": "https://img.freepik.com/free-photo/start-up-business-goals-strategy_53876-124798.jpg?w=900&t=st=1708239623~exp=1708240223~hmac=6a2248b80ab199506636d643e79321e5d91b5d2d9f254979be40627e815e77e0"
     },
     {
         "id": "14",
@@ -21,8 +21,8 @@
         "venue": "Jawaharlal Nehru Stadium, Delhi",
         "price": "1500rs",
         "categories": ["Music", "Entertainment"],
-        "thumbnail_url": "https://example.com/images/thumb-music.jpg",
-        "medium_url": "https://example.com/images/med-music.jpg"
+        "thumbnail_url": "https://img.freepik.com/free-photo/yellow-color-explode-crowd-enjoying-holi-festival_23-2148129339.jpg?w=900&t=st=1708239766~exp=1708240366~hmac=1e50f5832c0fae8708035e12513345d1af850165a5959f0ba2fe4ed0b10bfc39",
+        "medium_url": "https://img.freepik.com/free-photo/yellow-color-explode-crowd-enjoying-holi-festival_23-2148129339.jpg?w=900&t=st=1708239766~exp=1708240366~hmac=1e50f5832c0fae8708035e12513345d1af850165a5959f0ba2fe4ed0b10bfc39"
     },
     {
         "id": "15",
@@ -33,8 +33,8 @@
         "venue": "Mumbai Convention Centre",
         "price": "1800rs",
         "categories": ["Environment", "Sustainability"],
-        "thumbnail_url": "https://example.com/images/thumb-greenenergy.jpg",
-        "medium_url": "https://example.com/images/med-greenenergy.jpg"
+        "thumbnail_url": "https://img.freepik.com/free-photo/beautiful-sustainability-concept_23-2149261944.jpg?w=740&t=st=1708239849~exp=1708240449~hmac=cd721869528a6e0aad29c1387ee1c1fb43fec39a04e3eb40d6894205bf46cac6",
+        "medium_url": "https://img.freepik.com/free-photo/beautiful-sustainability-concept_23-2149261944.jpg?w=740&t=st=1708239849~exp=1708240449~hmac=cd721869528a6e0aad29c1387ee1c1fb43fec39a04e3eb40d6894205bf46cac6"
     },
     {
         "id": "16",
@@ -45,8 +45,8 @@
         "venue": "Chennai Trade Centre",
         "price": "Free Entry",
         "categories": ["Travel", "Tourism"],
-        "thumbnail_url": "https://example.com/images/thumb-travel.jpg",
-        "medium_url": "https://example.com/images/med-travel.jpg"
+        "thumbnail_url": "https://img.freepik.com/free-vector/couple-going-holiday-vacation-illustration_335657-441.jpg?w=826&t=st=1708239942~exp=1708240542~hmac=1da4bde89adf514a669bb82d0a0da80e27b6f6baf0558055a7e9f5c22e9c8439",
+        "medium_url": "https://img.freepik.com/free-vector/couple-going-holiday-vacation-illustration_335657-441.jpg?w=826&t=st=1708239942~exp=1708240542~hmac=1da4bde89adf514a669bb82d0a0da80e27b6f6baf0558055a7e9f5c22e9c8439"
     },
     {
         "id": "17",
@@ -57,8 +57,62 @@
         "venue": "Hyderabad International Convention Center",
         "price": "2000rs",
         "categories": ["Business", "E-commerce"],
-        "thumbnail_url": "https://example.com/images/thumb-ecommerce.jpg",
-        "medium_url": "https://example.com/images/med-ecommerce.jpg"
-    }
-]
+        "thumbnail_url": "https://img.freepik.com/free-photo/showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg?w=826&t=st=1708240022~exp=1708240622~hmac=6f2a773add9c6d07458d776622c53770498043cd49d4602e4c8d038e06b1a599",
+        "medium_url": "https://img.freepik.com/free-photo/showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg?w=826&t=st=1708240022~exp=1708240622~hmac=6f2a773add9c6d07458d776622c53770498043cd49d4602e4c8d038e06b1a599"
+    },
+
+    
+        {
+          "id": "17",
+          "name": "E-commerce Summit",
+          "description": "Discussion on the latest trends and innovations in e-commerce.",
+          "host": "E-commerce Association",
+          "date": "2024-05-01",
+          "venue": "Hyderabad International Convention Center",
+          "price": "2000rs",
+          "categories": ["Business", "E-commerce"],
+          "thumbnail_url": "https://img.freepik.com/free-photo/showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg?w=826&t=st=1708240022~exp=1708240622~hmac=6f2a773add9c6d07458d776622c53770498043cd49d4602e4c8d038e06b1a599",
+          "medium_url": "https://img.freepik.com/free-photo/showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg?w=826&t=st=1708240022~exp=1708240622~hmac=6f2a773add9c6d07458d776622c53770498043cd49d4602e4c8d038e06b1a599"
+        },
+        {
+          "id": "18",
+          "name": "Digital Marketing Conference",
+          "description": "Explore the latest strategies and tactics in digital marketing.",
+          "host": "Digital Marketing Institute",
+          "date": "2024-06-15",
+          "venue": "New York City Convention Center",
+          "price": "$150",
+          "categories": ["Business", "Marketing", "Digital"],
+          "thumbnail_url": "https://img.freepik.com/free-photo/digital-marketing-concept-marketing-strategy-plan-on-virtual-screen_53876-159589.jpg?size=626&ext=jpg",
+          "medium_url": "https://img.freepik.com/free-photo/digital-marketing-concept-marketing-strategy-plan-on-virtual-screen_53876-159589.jpg?size=626&ext=jpg"
+        },
+        {
+          "id": "19",
+          "name": "Tech Expo 2024",
+          "description": "Discover the latest advancements in technology and innovation.",
+          "host": "Technology Association",
+          "date": "2024-07-20",
+          "venue": "San Francisco Tech Center",
+          "price": "Free",
+          "categories": ["Technology", "Innovation"],
+          "thumbnail_url": "https://img.freepik.com/free-photo/technology-digital-device-innovation-concept_53876-126216.jpg?size=626&ext=jpg",
+          "medium_url": "https://img.freepik.com/free-photo/technology-digital-device-innovation-concept_53876-126216.jpg?size=626&ext=jpg"
+        },
+        {
+          "id": "20",
+          "name": "Startup Summit",
+          "description": "Connect with investors and learn from successful entrepreneurs.",
+          "host": "Startup Hub",
+          "date": "2024-08-10",
+          "venue": "London Startup Tower",
+          "price": "£100",
+          "categories": ["Business", "Startup"],
+          "thumbnail_url": "https://img.freepik.com/free-photo/startup_99433-298.jpg?size=626&ext=jpg",
+          "medium_url": "https://img.freepik.com/free-photo/startup_99433-298.jpg?size=626&ext=jpg"
+        }
+      ]
+      
+    
+
+
  

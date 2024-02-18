@@ -1,86 +1,36 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Share } from 'react-native';
+import { View, Text ,StyleSheet,Image,ScrollView, Dimensions} from 'react-native'
+import React from 'react'
+import { useLocalSearchParams } from 'expo-router';
+import ListingsData from '@/assets/data/Events-listingvertical.json';
 import { Ionicons } from '@expo/vector-icons';
-import Animated, {
-  interpolate,
-  useAnimatedRef,
-  useAnimatedStyle,
-  useScrollViewOffset,
-} from 'react-native-reanimated';
-import { useLocalSearchParams, useNavigation } from 'expo-router';
-import { defaultStyles } from '@/constants/Styles';
-import ListingItem from '@/interfaces/Listing';
+import Colors from '@/constants/Colors';
 
-const { width } = Dimensions.get('window');
+
 const IMG_HEIGHT = 300;
+const {width} = Dimensions.get('window');
 
-const DetailsPage = () => {
-  const { id } = useLocalSearchParams();
-  const listing = (ListingItem as any[]).find((item) => item.id === id);
-  const navigation = useNavigation();
-  const scrollRef = useAnimatedRef<Animated.ScrollView>();
+const Page = () => {
+    const { id } = useLocalSearchParams<{id: string}>();
+    const listing  = (ListingsData as any[]).find((item) => item.id === id);
+     
 
-  const shareListing = async () => {
-    try {
-      await Share.share({
-        title: listing.name,
-        url: listing.listing_url,
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const scrollOffset = useScrollViewOffset(scrollRef);
-
-  const imageAnimatedStyle = useAnimatedStyle(() => {
-    return {
-      transform: [
-        {
-          translateY: interpolate(
-            scrollOffset.value,
-            [-IMG_HEIGHT, 0, IMG_HEIGHT, IMG_HEIGHT],
-            [-IMG_HEIGHT / 2, 0, IMG_HEIGHT * 0.75]
-          ),
-        },
-        {
-          scale: interpolate(scrollOffset.value, [-IMG_HEIGHT, 0, IMG_HEIGHT], [2, 1, 1]),
-        },
-      ],
-    };
-  });
-
-  const headerAnimatedStyle = useAnimatedStyle(() => {
-    return {
-      opacity: interpolate(scrollOffset.value, [0, IMG_HEIGHT / 1.5], [0, 1]),
-    };
-  }, []);
 
   return (
     <View style={styles.container}>
-      <Animated.ScrollView
-        contentContainerStyle={{ paddingBottom: 100 }}
-        ref={scrollRef}
-        scrollEventThrottle={16}>
-        <Animated.Image
-          source={{ uri: listing.xl_picture_url }}
-          style={[styles.image, imageAnimatedStyle]}
-          resizeMode="cover"
-        />
+      <ScrollView>
+        <Image source={require('@/assets/download.jpg')} style={styles.image}/>
 
         <View style={styles.infoContainer}>
           <Text style={styles.name}>{listing.name}</Text>
           <Text style={styles.location}>
-            {listing.room_type} in {listing.smart_location}
+            {listing.venue}
           </Text>
           <Text style={styles.rooms}>
-            {listing.guests_included} guests · {listing.bedrooms} bedrooms · {listing.beds} bed ·{' '}
-            {listing.bathrooms} bathrooms
+            {listing.date}
           </Text>
           <View style={{ flexDirection: 'row', gap: 4 }}>
-            <Ionicons name="star" size={16} />
             <Text style={styles.ratings}>
-              {listing.review_scores_rating / 20} · {listing.number_of_reviews} reviews
+              {listing.categories}
             </Text>
           </View>
           <View style={styles.divider} />
@@ -89,8 +39,8 @@ const DetailsPage = () => {
             <Image source={{ uri: listing.host_picture_url }} style={styles.host} />
 
             <View>
-              <Text style={{ fontWeight: '500', fontSize: 16 }}>Hosted by {listing.host_name}</Text>
-              <Text>Host since {listing.host_since}</Text>
+              <Text style={{ fontWeight: '500', fontSize: 16 }}>Hosted by {listing.host}</Text>
+              {/* <Text>Host since {listing.host}</Text> */}
             </View>
           </View>
 
@@ -98,44 +48,22 @@ const DetailsPage = () => {
 
           <Text style={styles.description}>{listing.description}</Text>
         </View>
-      </Animated.ScrollView>
 
-      <Animated.View style={defaultStyles.footer}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-          <TouchableOpacity style={styles.footerText}>
-            <Text style={styles.footerPrice}>€{listing.price}</Text>
-            <Text>night</Text>
-          </TouchableOpacity>
 
-          <TouchableOpacity style={[defaultStyles.btn, { paddingRight: 20, paddingLeft: 20 }]}>
-            <Text style={defaultStyles.btnText}>Reserve</Text>
-          </TouchableOpacity>
-        </View>
-      </Animated.View>
 
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.roundButton} onPress={shareListing}>
-          <Ionicons name="share-outline" size={22} color={'#000'} />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.roundButton}>
-          <Ionicons name="heart-outline" size={22} color={'#000'} />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.roundButton} onPress={() => navigation.goBack()}>
-          <Ionicons name="chevron-back" size={24} color={'#000'} />
-        </TouchableOpacity>
-      </View>
+      </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
+  container:{
+    flex:1,
+    backgroundColor:'#fff'
   },
-  image: {
-    height: IMG_HEIGHT,
-    width: width,
+  image:{
+    height:IMG_HEIGHT,
+    width,
   },
   infoContainer: {
     padding: 24,
@@ -195,19 +123,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'purple',
+    color: '#000',
+  },
+  bar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
   },
   header: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: 'transparent',
+    backgroundColor: '#fff',
+    height: 100,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor:'grey',
   },
+
   description: {
     fontSize: 16,
     marginTop: 10,
@@ -215,4 +145,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DetailsPage;
+export default Page
